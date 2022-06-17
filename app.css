@@ -1,0 +1,75 @@
+/*----- Global ----- */
+:root {
+    --light: #ecf0f1;
+    --dark: #2C2C2C;
+}
+
+button {
+    border: none;
+    border-radius: 10px;
+    background-color: var(--light);
+    color: var(--dark);
+    font-size: 1.4rem;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.hide {
+    display: none !important;
+}
+
+/* ---------------------- */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-family: sans-serif;
+    color: var(--light);
+}
+
+header {
+    color: #2C2C2C;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+section{
+    flex: 1;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#map{
+    width: 600px;
+    height: 600px;
+    background-color: #95a5a6;
+    position: relative;
+}
+
+#snake-head, .snakeTail{
+    position: absolute;
+    background-color: #2ecc71;
+    width: 20px;
+    height: 20px;
+    transition: top 150ms, bottom 150ms, right 150ms,
+    left 150ms;
+}
+
+#apple{
+    position: absolute;
+    background-color: #e74c3c;
+    width: 20px;
+    height: 20px;
+}
