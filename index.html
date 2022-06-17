@@ -14,6 +14,11 @@
         <h1>Snake</h1>
     </header>
     <section id="start-container">
+        <div>
+            <p>Difficulté : <span class="difficulty">Normal</span></p>
+            <button class="btnDifficulty">Normal</button>
+            <button class="btnDifficulty">Hardcore</button>
+        </div>
         <button id="start">Start</button>
     </section>
     <section id="game-container" class="hide">
@@ -23,7 +28,11 @@
     </section>
     <section id="end-container" class="hide">
         <img src="img/bad-mauvais.gif" alt="T'es mauvais Jack !">
-        <p>Votre score : <span class="score"></span></p>
+        <p><span class="difficulty">Normal</span> - Votre score : <span class="score"></span></p>
+        <div>
+            <button class="btnDifficulty">Normal</button>
+            <button class="btnDifficulty">Hardcore</button>
+        </div>
         <button id="reStart">Rejouer</button>
     </section>
 </body>

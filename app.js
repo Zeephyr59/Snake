@@ -11,13 +11,36 @@ const btnReStart = document.getElementById('reStart');
 let snakeHead;
 const snakeTailBlock = document.getElementsByClassName('snakeTail');
 
+const btnDifficulty = document.getElementsByClassName('btnDifficulty');
+
+let difficulty = 150; 
 let direction = 'right';
 let score = 0;
 let gameLoop;
 
 const init = () => {
+    for(let button of btnDifficulty){
+        button.addEventListener('click', setDifficulty);
+    }
+
     btnStart.addEventListener('click', start, once = true)
+
 };
+
+const setDifficulty = event => {
+    const elmDifficulty = document.querySelectorAll('.difficulty');
+    if(event.target.innerText == 'Normal'){
+        difficulty = 150;
+        for(let elm of elmDifficulty){
+            elm.innerText = 'Normal';
+        }
+    } else if (event.target.innerText == 'Hardcore'){
+        difficulty = 50;
+        for(let elm of elmDifficulty){
+            elm.innerText = 'Hardcore';
+        }
+    }
+}
 
 const start = () => {
     startContainer.classList.add('hide');
@@ -28,7 +51,7 @@ const start = () => {
     initSnake();
     spawnApple();
 
-    gameLoop = setInterval(updateGame, 150);
+    gameLoop = setInterval(updateGame, difficulty);
     document.addEventListener('keyup', detectDirection);
 };
 
